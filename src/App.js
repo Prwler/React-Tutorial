@@ -17,7 +17,7 @@ function App() {
   }
 
   const addItem = (item) => {
-    const id = items.length? items [items.length - 1].id + 1: 1;
+    const id = items.length? items[items.length - 1].id + 1: 1;
     const myNewItem = { id,checked: false,item};
     const listItems = [...items, myNewItem];
     setAndSaveItems(listItems);
@@ -55,7 +55,7 @@ function App() {
         setSearch={setSearch}
       />
       <Content 
-        items = {items}
+        items = {items.filter(item => ((item.item).toLowerCase()).includes(search.toLowerCase()))}
         handleCheck = {handleCheck}
         handleDelete = {handleDelete}
       />
